@@ -10,6 +10,7 @@ jobs:
     env:
       BASE_URL: "https://example.com"
     steps:
-      - name: Set FULL_URL
-        run: echo "FULL_URL=${{ env.BASE_URL }}/path" >> $GITHUB_ENV
-      - run: echo $FULL_URL
+      - run: |
+          FULL_URL="${BASE_URL}/path"
+          echo $FULL_URL
+
