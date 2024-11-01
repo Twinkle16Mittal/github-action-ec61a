@@ -1,0 +1,9 @@
+jobs:
+  example:
+    runs-on: ubuntu-latest
+    env:
+      BASE_URL: "https://example.com"
+    steps:
+      - name: Set FULL_URL
+        run: echo "FULL_URL=${{ env.BASE_URL }}/path" >> $GITHUB_ENV
+      - run: echo $FULL_URL
